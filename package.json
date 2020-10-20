@@ -1,0 +1,27 @@
+{
+  "name": "employee-tracker",
+  "version": "1.0.0",
+  "description": "tracks employee information",
+  "main": "server.js",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test run",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biencarlovilla/Employee-Tracker.git"
+  },
+  "keywords": [
+    "employee"
+  ],
+  "author": "Biencarlo Villa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/biencarlovilla/Employee-Tracker/issues"
+  },
+  "homepage": "https://github.com/biencarlovilla/Employee-Tracker#readme"
+}
