@@ -59,3 +59,13 @@ INSERT INTO role (title, salary, department_id)
 VALUE ("Quality Assurance", 200000, 1);
 INSERT INTO role (title, salary, department_id)
 VALUE ("Accountant", 160000, 4);
+
+
+INSERT INTO department (department)
+VALUE ("Engineering");
+INSERT INTO department (department)
+VALUE ("Administrator");
+INSERT INTO department (department)
+VALUE ("Event Coordinator");
+INSERT INTO department (department)
+VALUE ("Finance");
