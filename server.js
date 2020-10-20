@@ -228,3 +228,54 @@ function addDept() {
         start();
     });
 };
+
+function updateEmployee() {
+    connection.query("SELECT employee.first_name, role.title FROM employee INNER JOIN role on role.id = employee.role_id ", function (err, res) {
+        if (err) throw err;
+
+        inquirer.prompt([
+            {
+                type: "list",
+                name: "employee",
+                message: "Which employee's role do you want to update?",
+                
+                choices: function () {
+                    var employeeArr = []
+                    for (var i = 0; i < res.length; i++) {
+                        employeeArr.push(res[i].first_name)
+                    }
+                    return employeeArr
+                }
+            },
+            {
+                type: "list",
+                name: "role",
+                message: "Which role do you want to assign the selected employee?",
+               
+                choices: function () {
+                    var roleArr = []
+                    for (var i = 0; i < res.length; i++) {
+                        roleArr.push(res[i].title)
+                    }
+                    return roleArr
+                }
+            }
+        ]).then(function(answer){
+            var roleId = readRoles().indexOf(answer.role) + 1
+            connection.query("UPDATE employee SET ? WHERE ? ", 
+            [
+                {
+                    role_id: roleId
+                },
+                {
+                    first_name: answer.employee
+                }
+            ], 
+            function(err, res){
+                if(err) throw err
+                console.log("Updated Role!")
+                start();
+            });
+        });
+    });
+};
