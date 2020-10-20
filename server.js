@@ -68,3 +68,35 @@ function viewAll() {
         start()
     });
 };
+
+function viewRole() {
+    connection.query("SELECT * FROM role", function (err, res) {
+        if (err) throw err
+
+        inquirer.prompt([
+            {
+                type: "list",
+                name: "role",
+                message: "Which role's employees would you like to see?",
+                choices: function () {
+                    var choiceArray = []
+                    for (var i = 0; i < res.length; i++) {
+                        choiceArray.push(res[i].title)
+                    }
+                    return choiceArray
+                }
+            }
+        ]).then(function (answer) {
+            connection.query("SELECT employee.first_name, employee.last_name, role.title, role.salary, department.department FROM employee INNER JOIN role on role.id = employee.role_id INNER JOIN department on department.id = role.department_id", function (err, res) {
+                var roleArr = []
+                for (var i = 0; i < res.length; i++) {
+                    if (answer.role === res[i].title) {
+                        roleArr.push(res[i])
+                    }
+                }
+                console.table(roleArr);
+                start();
+            });
+        });
+    });
+};
