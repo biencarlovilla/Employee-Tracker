@@ -18,10 +18,10 @@ As a business owner, I want to be able to view and manage the departments, roles
 
 ## Database
 Implementation:
-![create-db](Assets/createDB.png)
+![create-db](assets/createDB.png)
 
 Doing Inserts 
-![Inserts](Assets/inserts.png)
+![Inserts](assets/inserts.png)
 
 ## Installation
 * npm install
@@ -31,11 +31,11 @@ Doing Inserts
 * npm install console.table
 
 ## Visuals
-![View-Employee](Assets/viewEmployee.png)
+![View-Employee](assets/viewEmployee.png)
 
-![Employee-Dept](Assets/employeeDept.png)
+![Employee-Dept](assets/employeeDept.png)
 
-![Role](Assets/byRole.png)
+![Role](assets/byRole.png)
 
 ## License
 MIT License
