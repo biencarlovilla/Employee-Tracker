@@ -26,3 +26,20 @@ CREATE TABLE department (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   department VARCHAR(40)
 );
+
+
+
+INSERT INTO employee (first_name, last_name, manager_id, role_id)
+VALUE ("Tony", "Stark", 1, 1);
+INSERT INTO employee (first_name, last_name, manager_id, role_id)
+VALUE ("Bruce", "Banner", 4, 2);
+INSERT INTO employee (first_name, last_name, manager_id, role_id)
+VALUE ("Steve","Rogers", 2, 3);
+INSERT INTO employee (first_name, last_name, manager_id, role_id)
+VALUE ("Natasha", "Romanoff", null, 4);
+INSERT INTO employee (first_name, last_name, manager_id, role_id)
+VALUE ("Clinton", "Barton", null, 5);
+INSERT INTO employee (first_name, last_name, manager_id, role_id)
+VALUE ("Thor", "OfAsgard", 1, 6);
+INSERT INTO employee (first_name, last_name, manager_id, role_id)
+VALUE ("Peter", "Parker", null, 7);
