@@ -196,3 +196,19 @@ function addEmployee() {
         });
     });
 };
+
+function addRole() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "role",
+            message: "What is the name of the role?"
+        }
+    ]).then(function (res) {
+        connection.query("INSERT INTO role SET?", {
+            title: res.role
+        })
+        console.log("Added Role")
+        start();
+    });
+};
