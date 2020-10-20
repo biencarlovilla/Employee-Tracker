@@ -144,3 +144,15 @@ function readRoles() {
     });
     return roleArr
 };
+
+var managerArr = []
+function readManager() {
+   
+    connection.query("SELECT first_name, last_name FROM employee WHERE manager_id IS NULL", function (err, res) {
+        if (err) throw err;
+        for (var i = 0; i < res.length; i++) {
+            managerArr.push(res[i].first_name + " " + res[i].last_name)
+        };
+    });
+    return managerArr
+};
