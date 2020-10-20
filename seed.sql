@@ -43,3 +43,19 @@ INSERT INTO employee (first_name, last_name, manager_id, role_id)
 VALUE ("Thor", "OfAsgard", 1, 6);
 INSERT INTO employee (first_name, last_name, manager_id, role_id)
 VALUE ("Peter", "Parker", null, 7);
+
+
+INSERT INTO role (title, salary, department_id)
+VALUE ("Software Engineer", 100000, 1);
+INSERT INTO role (title, salary, department_id)
+VALUE ("IT Technician", 150000, 1);
+INSERT INTO role (title, salary, department_id)
+VALUE ("Database Administrator", 90000, 2);
+INSERT INTO role (title, salary, department_id)
+VALUE ("Data Clerk", 80000, 2);
+INSERT INTO role (title, salary, department_id)
+VALUE ("Program Manager", 70000, 3);
+INSERT INTO role (title, salary, department_id)
+VALUE ("Quality Assurance", 200000, 1);
+INSERT INTO role (title, salary, department_id)
+VALUE ("Accountant", 160000, 4);
