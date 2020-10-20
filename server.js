@@ -212,3 +212,19 @@ function addRole() {
         start();
     });
 };
+
+function addDept() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "department",
+            message: "What is the name of the department?"
+        }
+    ]).then(function (res) {
+        connection.query("INSERT INTO department SET ?", {
+            department: res.department
+        })
+        console.log("Added Department")
+        start();
+    });
+};
