@@ -156,3 +156,43 @@ function readManager() {
     });
     return managerArr
 };
+
+function addEmployee() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "firstName",
+            message: "What is the employee's first name?"
+        },
+        {
+            type: "input",
+            name: "lastName",
+            message: "What is the employee's last name?"
+        },
+        {
+            type: "list",
+            name: "role",
+            message: "What is the employee's role?",
+            choices: readRoles()
+        },
+        {
+            type: "list",
+            name: "manager",
+            message: "Who is the employee's manager?",
+            choices: readManager()
+        }
+    ]).then(function (answers) {
+        var roleId = readRoles().indexOf(answers.role) + 1
+        var managerId = readManager().indexOf(answers.manager) + 1
+        connection.query("INSERT INTO employee SET ?", {
+            first_name: answers.firstName,
+            last_name: answers.lastName,
+            manager_id: managerId,
+            role_id: roleId
+        }, function(err){
+            if (err) throw err
+            console.log("Added Employee!")
+            start()
+        });
+    });
+};
